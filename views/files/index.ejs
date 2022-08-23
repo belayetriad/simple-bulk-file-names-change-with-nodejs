@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <ul class="list-group">
+          <li class="list-group-item border-success bg-success active">
+            Your files from {{<%= fileDirPath %>}}
+          </li>
+          <% files.forEach(function(file) { %>
+          <li class="list-group-item"><%= file %></li>
+          <% }); %>
+        </ul>
+        <div class="mt-4 text-right">
+          <a href="/files/rename-all" class="btn btn-primary">
+            Change All File Name
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+</html>
